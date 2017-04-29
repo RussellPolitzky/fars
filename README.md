@@ -1,9 +1,5 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-``` r
-knitr::opts_knit$set(root.dir = "./inst/extdata/") 
-```
-
 FARS Analysis Functions
 =======================
 
