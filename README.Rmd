@@ -16,6 +16,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+Current Travis Build Status: [![Travis-CI Build Status](https://travis-ci.org/RussellPolitzky/fars.svg?branch=master)](https://travis-ci.org/RussellPolitzky/fars)
+
 # FARS Analysis Functions
 
 FARS is the Fatal Accident Reporting System.  Fatal Accident Reports provide details, such as the time and location of each accident.  The `fars` package provides a set of simple functions to load and analyze this data.

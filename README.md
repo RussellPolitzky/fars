@@ -1,5 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+Current Travis Build Status: [![Travis-CI Build Status](https://travis-ci.org/RussellPolitzky/fars.svg?branch=master)](https://travis-ci.org/RussellPolitzky/fars)
+
 FARS Analysis Functions
 =======================
 
