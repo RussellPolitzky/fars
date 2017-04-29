@@ -3,3 +3,4 @@
 ^README\.Rmd$
 ^README-.*\.png$
 Notes.rmd
+scratchpad.R
