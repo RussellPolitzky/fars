@@ -11,7 +11,6 @@
 #' prints an associated message, without plotting any points.
 #'
 #' @importFrom dplyr filter
-#' @importFrom maps map
 #' @importFrom graphics points
 #'
 #' @param state.num a number representing a state.  The number must be
