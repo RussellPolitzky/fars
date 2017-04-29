@@ -11,8 +11,10 @@
 #'    xxxx is the accident data year expressed as a four digit number.
 #'
 #' @examples
+#' \dontrun{
 #' make_filename(2012)
 #' make_filename("2012")
+#' }
 #'
 #' @export
 make_filename <- function(year) {

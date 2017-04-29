@@ -14,8 +14,10 @@
 #'    the number of fatalities per month for each given year.
 #'
 #' @examples
+#' \dontrun{
 #' fars_summarize_years(c(2012, 2013, 2014))
 #' fars_summarize_years(c("2012", "2013", "2014"))
+#' }
 #'
 #' @export
 fars_summarize_years <- function(years) {

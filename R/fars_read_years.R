@@ -17,8 +17,10 @@
 #'    read.
 #'
 #' @examples
+#' \dontrun{
 #' fars_read_years(c(2012, 2013, 2014))
 #' fars_read_years(c("2012", "2013", "2014"))
+#' }
 #'
 #' @export
 fars_read_years <- function(years) {

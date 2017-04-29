@@ -22,8 +22,10 @@
 #' @return NULL - this function is called for its side-effects.
 #'
 #' @examples
-#' fars_map_state(15, 2012)
-#' fars_map_state(5, "2012")
+#' \dontrun{
+#' fars_map_state(15, 2013)
+#' fars_map_state(5, "2013")
+#' }
 #'
 #' @export
 fars_map_state <- function(state.num, year) {

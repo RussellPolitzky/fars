@@ -19,8 +19,10 @@
 #' no need to uncompress them beforehand.
 #'
 #' @examples
+#' \dontrun{
 #' fars_read("accident_2015.csv")
 #' fars_read("accident_2015.csv.bz2")
+#' }
 #'
 #' @export
 fars_read <- function(filename) {
