@@ -7,7 +7,7 @@
 #'
 #' @inheritParams fars_read_years
 #'
-#' @importFrom dplyr bind_rows group_by summarize
+#' @import dplyr
 #' @importFrom tidyr spread
 #'
 #' @return This function returns a summary, \code{data.frame} (\code{tbl_df}) listing
