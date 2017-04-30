@@ -29,7 +29,7 @@ prints an associated message, without plotting any points.
 }
 \examples{
 \dontrun{
-fars_map_state(15, 2013)
+fars_map_state(15,  2013)
 fars_map_state(5, "2013")
 }
 

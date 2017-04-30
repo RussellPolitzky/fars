@@ -12,6 +12,7 @@
 #'
 #' @importFrom dplyr filter
 #' @importFrom graphics points
+#' @importFrom maps map
 #'
 #' @param state.num a number representing a state.  The number must be
 #'    coercible to an integer.
@@ -23,7 +24,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' fars_map_state(15, 2013)
+#' fars_map_state(15,  2013)
 #' fars_map_state(5, "2013")
 #' }
 #'

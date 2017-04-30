@@ -1,7 +1,6 @@
 
 
-
-test_that('FARS file can be loaded', {
+test_that('FARS file loads with correct number of rows', {
   file_name <- fars::make_filename(2013)
   full_path <- system.file("extdata", file_name, package = "fars")
   data      <- fars::fars_read(full_path)
