@@ -23,7 +23,9 @@ single argument; \code{years}; a vector of years for which FARS data's to be rea
 \code{fars_read_years} returns NULL and prints a warning in respect of invalid years.
 }
 \examples{
+\dontrun{
 fars_read_years(c(2012, 2013, 2014))
 fars_read_years(c("2012", "2013", "2014"))
+}
 
 }

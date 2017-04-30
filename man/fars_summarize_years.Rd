@@ -21,7 +21,9 @@ single argument; \code{years}; a vector/list of years that the summary
 will cover.
 }
 \examples{
+\dontrun{
 fars_summarize_years(c(2012, 2013, 2014))
 fars_summarize_years(c("2012", "2013", "2014"))
+}
 
 }

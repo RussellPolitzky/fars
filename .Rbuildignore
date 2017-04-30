@@ -3,5 +3,6 @@
 ^README\.Rmd$
 ^README-.*\.png$
 Notes.rmd
+Notes.nb.html
 scratchpad.R
 ^\.travis\.yml$

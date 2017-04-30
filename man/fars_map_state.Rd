@@ -28,7 +28,9 @@ were recorded in the given state and year then \code{fars_map_state}
 prints an associated message, without plotting any points.
 }
 \examples{
-fars_map_state(15, 2012)
-fars_map_state(5, "2012")
+\dontrun{
+fars_map_state(15, 2013)
+fars_map_state(5, "2013")
+}
 
 }

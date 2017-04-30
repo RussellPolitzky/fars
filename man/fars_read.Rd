@@ -26,7 +26,9 @@ This function also reads compressed, csv files, so there's
 no need to uncompress them beforehand.
 }
 \examples{
+\dontrun{
 fars_read("accident_2015.csv")
 fars_read("accident_2015.csv.bz2")
+}
 
 }
