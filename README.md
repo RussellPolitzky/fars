@@ -1,14 +1,15 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-Current Travis Build Status: [![Travis-CI Build Status](https://travis-ci.org/RussellPolitzky/fars.svg?branch=master)](https://travis-ci.org/RussellPolitzky/fars)
+| Current Travis Build Status | [![Travis-CI Build Status](https://travis-ci.org/RussellPolitzky/fars.svg?branch=master)](https://travis-ci.org/RussellPolitzky/fars) |
+|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
 
 FARS Analysis Functions
 =======================
 
-FARS is the Fatal Accident Reporting System. Fatal Accident Reports provide details, such as the time and location of each accident. The `fars` package provides a set of simple functions to load and analyze this data.
+FARS is the **F**atal **A**ccident **R**eporting **S**ystem. Fatal Accident Reports provide details, such as the time and location of each accident. The `fars` package provides a set of simple functions to load and analyze this data.
 
-`make_file_name`
-----------------
+`make_file_name()`
+------------------
 
 FARS, CSV data files have names with the following form:
 
@@ -70,7 +71,7 @@ Most users will want to load several FARS data files, by year, without having to
 
 ``` r
 all_data <- fars_read_years(c(2013, 2014, 2015))
-all_data
+head(all_data)
 ```
 
 The resulting list of `data.frame`s may, be subsequently combined, and analyzed as a whole.
@@ -111,3 +112,43 @@ fars_map_state(51, 2013)
 ```
 
 ![](README-unnamed-chunk-6-1.png)
+
+Sample Data
+===========
+
+This package ships with the following sample data files.
+
+    accident_2013.csv.bz2
+    accident_2014.csv.bz2
+    accident_2015.csv.bz2
+
+These files may be read using `system.file()` as follows:
+
+``` r
+# Get full path to sample, fars data file.
+file_name <- make_filename(2013)
+full_path <- system.file("extdata", file_name, package = "fars")
+
+# Load the fars data file.
+fars_data <- fars::fars_read(full_path)
+head(fars_data)
+#> # A tibble: 6 × 50
+#>   STATE ST_CASE VE_TOTAL VE_FORMS PVH_INVL  PEDS PERNOTMVIT PERMVIT
+#>   <int>   <int>    <int>    <int>    <int> <int>      <int>   <int>
+#> 1     1   10001        1        1        0     0          0       8
+#> 2     1   10002        2        2        0     0          0       2
+#> 3     1   10003        1        1        0     0          0       1
+#> 4     1   10004        1        1        0     0          0       3
+#> 5     1   10005        2        2        0     0          0       3
+#> 6     1   10006        2        2        0     0          0       3
+#> # ... with 42 more variables: PERSONS <int>, COUNTY <int>, CITY <int>,
+#> #   DAY <int>, MONTH <int>, YEAR <int>, DAY_WEEK <int>, HOUR <int>,
+#> #   MINUTE <int>, NHS <int>, ROAD_FNC <int>, ROUTE <int>, TWAY_ID <chr>,
+#> #   TWAY_ID2 <chr>, MILEPT <int>, LATITUDE <dbl>, LONGITUD <dbl>,
+#> #   SP_JUR <int>, HARM_EV <int>, MAN_COLL <int>, RELJCT1 <int>,
+#> #   RELJCT2 <int>, TYP_INT <int>, WRK_ZONE <int>, REL_ROAD <int>,
+#> #   LGT_COND <int>, WEATHER1 <int>, WEATHER2 <int>, WEATHER <int>,
+#> #   SCH_BUS <int>, RAIL <chr>, NOT_HOUR <int>, NOT_MIN <int>,
+#> #   ARR_HOUR <int>, ARR_MIN <int>, HOSP_HR <int>, HOSP_MN <int>,
+#> #   CF1 <int>, CF2 <int>, CF3 <int>, FATALS <int>, DRUNK_DR <int>
+```
