@@ -1,6 +1,4 @@
-
-
-test_that('FARS file loads with correct number of rows', {
+test_that('FARS file loads with correct number of records', {
   file_name <- fars::make_filename(2013)
   full_path <- system.file("extdata", file_name, package = "fars")
   data      <- fars::fars_read(full_path)
@@ -9,10 +7,6 @@ test_that('FARS file loads with correct number of rows', {
 })
 
 
-test_that('FARS has correct number of columns', {
-  file_name <- fars::make_filename(2013)
-  full_path <- system.file("extdata", file_name, package = "fars")
-  data      <- fars::fars_read(full_path)
-  no_cols   <- length(data)
-  expect_equal(no_cols, 50)
+test_that('FARS fails if the file doesnt exist', {
+  expect_error(fars::fars_read("does_not_exist.csv"), "file 'does_not_exist.csv' does not exist")
 })

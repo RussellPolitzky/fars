@@ -176,40 +176,28 @@ $(document).ready(function () {
 <h1>Notes:</h1>
 <p>Grading will be according to the following requirements:</p>
 <ol style="list-style-type: decimal">
-<li><p>Does this package contain the correct R file(s) under the R/ directory? Yes, all functions split out into one file per function.</p></li>
-<li><p>Does this package contain a man/directory with corresponding documentation files? Yes</p></li>
-<li><p>Does this package contain a vignette which provides a meaningful description of the package and how it should be used?</p></li>
+<li><p>Does this package contain the correct R file(s) under the R/ directory? <em>Yes, all functions split out into one file per function.</em></p></li>
+<li><p>Does this package contain a man/directory with corresponding documentation files? <em>Yes, and I’ve verified that they work correctly by building the package and thenusing F1 to get help on the functions.</em></p></li>
+<li><p>Does this package contain a vignette which provides a meaningful description of the package and how it should be used? <em>Yes</em></p></li>
+<li><p>Does this package have at least one test included in the tests/ directory? <em>Yes, and I’d like to add more. A couple for each function.</em></p></li>
+<li><p>Does this package have a NAMESPACE file? <em>Yes - Dev tools is generating this.</em></p></li>
+<li><p>Does the README.md file for this directory have a Travis badge? <em>Yes</em></p></li>
+<li><p>Is the build of this package passing on Travis? <em>Yes</em></p></li>
+<li><p>Are the build logs for this package on Travis free of any errors, warnings, or notes? <em>No, there’s still one note.</em></p></li>
 </ol>
-<p>No</p>
-<ol start="4" style="list-style-type: decimal">
-<li>Does this package have at least one test included in the tests/ directory?</li>
-</ol>
-<p>No</p>
-<ol start="5" style="list-style-type: decimal">
-<li>Does this package have a NAMESPACE file?</li>
-</ol>
-<p>Yes - Dev tools is generating this.</p>
-<ol start="6" style="list-style-type: decimal">
-<li>Does the README.md file for this directory have a Travis badge?</li>
-</ol>
-<p>No.</p>
-<ol start="7" style="list-style-type: decimal">
-<li>Is the build of this package passing on Travis?</li>
-</ol>
-<p>No.</p>
-<ol start="8" style="list-style-type: decimal">
-<li>Are the build logs for this package on Travis free of any errors, warnings, or notes?</li>
-</ol>
-<p>No. They don’t exist at this stage.</p>
 <hr />
 <ul>
 <li>Add a readme.rmd explaining the package.</li>
 </ul>
 <p>Have added this but, there’s</p>
+<p>Write the following tests:</p>
+<p>fars_read_years : given a set of years, should be able to read more than one fars file. should also work with one file. should return NUL IRO of files that don’t exist</p>
+<p>fars_summarize_years: given a set of years, should return the correct summary. perhaps create reference output and ensure that what we get back is the same.</p>
+<p>fars_map_state: This one’s hard to test because it’s called or its side effects. We would need to be able to mock the map to easily test this</p>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojIE5vdGVzOg0KDQpHcmFkaW5nIHdpbGwgYmUgYWNjb3JkaW5nIHRvIHRoZSBmb2xsb3dpbmcgcmVxdWlyZW1lbnRzOg0KDQoxLiBEb2VzIHRoaXMgcGFja2FnZSBjb250YWluIHRoZSBjb3JyZWN0IFIgZmlsZShzKSB1bmRlciB0aGUgUi8gZGlyZWN0b3J5Pw0KICAgWWVzLCBhbGwgZnVuY3Rpb25zIHNwbGl0IG91dCBpbnRvIG9uZSBmaWxlIHBlciBmdW5jdGlvbi4NCg0KMi4gRG9lcyB0aGlzIHBhY2thZ2UgY29udGFpbiBhIG1hbi9kaXJlY3Rvcnkgd2l0aCBjb3JyZXNwb25kaW5nIGRvY3VtZW50YXRpb24gZmlsZXM/DQogICBZZXMNCg0KMy4gRG9lcyB0aGlzIHBhY2thZ2UgY29udGFpbiBhIHZpZ25ldHRlIHdoaWNoIHByb3ZpZGVzIGEgbWVhbmluZ2Z1bCBkZXNjcmlwdGlvbiBvZiB0aGUgcGFja2FnZSBhbmQgaG93IGl0IHNob3VsZCBiZSB1c2VkPw0KDQogICBObw0KDQo0LiBEb2VzIHRoaXMgcGFja2FnZSBoYXZlIGF0IGxlYXN0IG9uZSB0ZXN0IGluY2x1ZGVkIGluIHRoZSB0ZXN0cy8gZGlyZWN0b3J5Pw0KDQogICBObw0KDQo1LiBEb2VzIHRoaXMgcGFja2FnZSBoYXZlIGEgTkFNRVNQQUNFIGZpbGU/DQoNCiAgIFllcyAtIERldiB0b29scyBpcyBnZW5lcmF0aW5nIHRoaXMuDQogDQo2LiBEb2VzIHRoZSBSRUFETUUubWQgZmlsZSBmb3IgdGhpcyBkaXJlY3RvcnkgaGF2ZSBhIFRyYXZpcyBiYWRnZT8NCg0KICAgTm8uDQoNCjcuIElzIHRoZSBidWlsZCBvZiB0aGlzIHBhY2thZ2UgcGFzc2luZyBvbiBUcmF2aXM/DQoNCiAgIE5vLg0KICAgDQo4LiBBcmUgdGhlIGJ1aWxkIGxvZ3MgZm9yIHRoaXMgcGFja2FnZSBvbiBUcmF2aXMgZnJlZSBvZiBhbnkgZXJyb3JzLCB3YXJuaW5ncywgb3Igbm90ZXM/DQoNCiAgIE5vLiBUaGV5IGRvbid0IGV4aXN0IGF0IHRoaXMgc3RhZ2UuDQoNCi0tLQ0KDQoNCg0KKiBBZGQgYSByZWFkbWUucm1kIGV4cGxhaW5pbmcgdGhlIHBhY2thZ2UuDQoNCiAgSGF2ZSBhZGRlZCB0aGlzIGJ1dCwgdGhlcmUncyANCg0KDQoNCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojIE5vdGVzOg0KDQpHcmFkaW5nIHdpbGwgYmUgYWNjb3JkaW5nIHRvIHRoZSBmb2xsb3dpbmcgcmVxdWlyZW1lbnRzOg0KDQoxLiBEb2VzIHRoaXMgcGFja2FnZSBjb250YWluIHRoZSBjb3JyZWN0IFIgZmlsZShzKSB1bmRlciB0aGUgUi8gZGlyZWN0b3J5Pw0KICAgKlllcywgYWxsIGZ1bmN0aW9ucyBzcGxpdCBvdXQgaW50byBvbmUgZmlsZSBwZXIgZnVuY3Rpb24uKg0KDQoyLiBEb2VzIHRoaXMgcGFja2FnZSBjb250YWluIGEgbWFuL2RpcmVjdG9yeSB3aXRoIGNvcnJlc3BvbmRpbmcgZG9jdW1lbnRhdGlvbiBmaWxlcz8NCiAgICpZZXMsIGFuZCBJJ3ZlIHZlcmlmaWVkIHRoYXQgdGhleSB3b3JrIGNvcnJlY3RseSBieSBidWlsZGluZyB0aGUgcGFja2FnZSBhbmQgdGhlbnVzaW5nIEYxIHRvIGdldCBoZWxwIG9uIHRoZSBmdW5jdGlvbnMuKg0KDQozLiBEb2VzIHRoaXMgcGFja2FnZSBjb250YWluIGEgdmlnbmV0dGUgd2hpY2ggcHJvdmlkZXMgYSBtZWFuaW5nZnVsIGRlc2NyaXB0aW9uIG9mIA0KICAgdGhlIHBhY2thZ2UgYW5kIGhvdyBpdCBzaG91bGQgYmUgdXNlZD8NCiAgICpZZXMqDQoNCjQuIERvZXMgdGhpcyBwYWNrYWdlIGhhdmUgYXQgbGVhc3Qgb25lIHRlc3QgaW5jbHVkZWQgaW4gdGhlIHRlc3RzLyBkaXJlY3Rvcnk/DQogICAqWWVzLCBhbmQgSSdkIGxpa2UgdG8gYWRkIG1vcmUuICBBIGNvdXBsZSBmb3IgZWFjaCBmdW5jdGlvbi4qDQoNCjUuIERvZXMgdGhpcyBwYWNrYWdlIGhhdmUgYSBOQU1FU1BBQ0UgZmlsZT8NCiAgICpZZXMgLSBEZXYgdG9vbHMgaXMgZ2VuZXJhdGluZyB0aGlzLioNCiANCjYuIERvZXMgdGhlIFJFQURNRS5tZCBmaWxlIGZvciB0aGlzIGRpcmVjdG9yeSBoYXZlIGEgVHJhdmlzIGJhZGdlPw0KICAgKlllcyoNCg0KNy4gSXMgdGhlIGJ1aWxkIG9mIHRoaXMgcGFja2FnZSBwYXNzaW5nIG9uIFRyYXZpcz8NCiAgICpZZXMqDQogICANCjguIEFyZSB0aGUgYnVpbGQgbG9ncyBmb3IgdGhpcyBwYWNrYWdlIG9uIFRyYXZpcyBmcmVlIG9mIGFueSBlcnJvcnMsIHdhcm5pbmdzLCBvciBub3Rlcz8NCiAgICpObywgdGhlcmUncyBzdGlsbCBvbmUgbm90ZS4qDQoNCi0tLQ0KDQoNCg0KKiBBZGQgYSByZWFkbWUucm1kIGV4cGxhaW5pbmcgdGhlIHBhY2thZ2UuDQoNCiAgSGF2ZSBhZGRlZCB0aGlzIGJ1dCwgdGhlcmUncyANCg0KDQoNCldyaXRlIHRoZSBmb2xsb3dpbmcgdGVzdHM6ICANCg0KDQpmYXJzX3JlYWRfeWVhcnMgOiBnaXZlbiBhIHNldCBvZiB5ZWFycywgc2hvdWxkIGJlIGFibGUgdG8gcmVhZCBtb3JlIHRoYW4gb25lIGZhcnMgZmlsZS4NCiAgICAgICAgICAgICAgICAgIHNob3VsZCBhbHNvIHdvcmsgd2l0aCBvbmUgZmlsZS4NCiAgICAgICAgICAgICAgICAgIHNob3VsZCByZXR1cm4gTlVMIElSTyBvZiBmaWxlcyB0aGF0IGRvbid0IGV4aXN0DQogICAgICAgICAgICAgICAgICANCmZhcnNfc3VtbWFyaXplX3llYXJzOiBnaXZlbiBhIHNldCBvZiB5ZWFycywgc2hvdWxkIHJldHVybiB0aGUgY29ycmVjdCBzdW1tYXJ5Lg0KICAgICAgICAgICAgICAgICAgICAgIHBlcmhhcHMgY3JlYXRlIHJlZmVyZW5jZSBvdXRwdXQgYW5kIGVuc3VyZSB0aGF0IHdoYXQgd2UgZ2V0DQogICAgICAgICAgICAgICAgICAgICAgYmFjayBpcyB0aGUgc2FtZS4NCg0KZmFyc19tYXBfc3RhdGU6ICBUaGlzIG9uZSdzIGhhcmQgdG8gdGVzdCBiZWNhdXNlIGl0J3MgY2FsbGVkIG9yIGl0cyBzaWRlIGVmZmVjdHMuDQogICAgICAgICAgICAgICAgIFdlIHdvdWxkIG5lZWQgdG8gYmUgYWJsZSB0byBtb2NrIHRoZSBtYXAgdG8gZWFzaWx5IHRlc3QgdGhpcw0KDQoNCg0KDQo=</div>
 
 
 

@@ -8,6 +8,7 @@
 #'
 #' @importFrom dplyr mutate
 #' @importFrom dplyr select
+#' @import data.table
 #'
 #' @param years A vector, or list, of years.  The elements of the list/vector
 #'     must be coerceible to integers e.g. character string "2012".
@@ -24,13 +25,16 @@
 #'
 #' @export
 fars_read_years <- function(years) {
-
   lapply(years, function(year) {
     file <- make_filename(year)
     tryCatch({
       dat <- fars_read(file)
-      dplyr::mutate(dat, year = year) %>%
-        dplyr::select("MONTH", year)
+      # Note that the code below has been replaced with a
+      # data.table equivalient because dplyr doesn't work
+      # correctly when using with_mock() and testing this
+      # function requires mocks to test properly.
+      data.table(dat)[, year := year][,
+        c("MONTH", "year")]
     }, error = function(e) {
       warning("invalid year: ", year)
       return(NULL)

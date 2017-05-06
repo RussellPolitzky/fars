@@ -9,7 +9,7 @@ Maintainer: Russell Politzky <russell.politzky@adomain.com>
 Description: The fars package offers a set of functions to analyze Fatal Analysis 
     Reporting System (FARS) CSV data files.  The package's functions cater for reading, 
     querying and plotting FARS, CSV data files.
-Imports: readr (>= 1.1.0), dplyr (>= 0.5.0), tidyr (>= 0.6.1), magrittr, maps
+Imports: readr (>= 1.1.0), dplyr (>= 0.5.0), tidyr (>= 0.6.1), magrittr, maps, data.table
 License: CC0
 Encoding: UTF-8
 LazyData: true
