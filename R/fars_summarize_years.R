@@ -7,10 +7,7 @@
 #'
 #' @inheritParams fars_read_years
 #'
-#' @importFrom dplyr bind_rows
-#' @importFrom dplyr group_by
-#' @importFrom dplyr summarize
-#' @importFrom tidyr spread
+#' @import data.table
 #'
 #' @return This function returns a summary, \code{data.frame} (\code{tbl_df}) listing
 #'    the number of fatalities per month for each given year.
@@ -24,6 +21,6 @@
 #' @export
 fars_summarize_years <- function(years) {
   dat_list <- fars_read_years(years)
-  rbindlist(dat_list)[, .N , by = c("year", "MONTH") ] %>%
-    dcast(MONTH ~ year, value.var = "N")
+  ym <- rbindlist(dat_list)[, .N , by = c("year", "MONTH") ]
+  dcast(ym, MONTH ~ year, value.var = "N")
 }
