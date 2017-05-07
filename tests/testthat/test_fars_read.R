@@ -1,3 +1,6 @@
+context("fars_read")
+
+
 test_that('FARS file loads with correct number of records', {
   file_name <- fars::make_filename(2013)
   full_path <- system.file("extdata", file_name, package = "fars")

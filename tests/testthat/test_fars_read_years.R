@@ -1,3 +1,6 @@
+context("fars_read_years")
+
+
 test_that('given a set of years, should be able to read more than one fars file', {
   with_mock(
     `fars::make_filename` = function(year) {

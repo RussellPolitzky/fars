@@ -22,6 +22,14 @@ knitr::opts_chunk$set(
 
 FARS is the **F**atal **A**ccident **R**eporting **S**ystem.  Fatal Accident Reports provide details, such as the time and location of each accident.  The `fars` package provides a set of simple functions to load and analyze this data.
 
+## Installation
+
+The `fars` package may be installed using `devtools` as follows:
+
+```{r eval=FALSE}
+devtools::install_github("RussellPolitzky/fars")
+```
+
 ## `make_file_name()`
 
 FARS, CSV data files have names with the following form:
